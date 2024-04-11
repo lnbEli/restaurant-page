@@ -44,6 +44,11 @@ button {
   font-size: 0.8rem;
   padding: 2px 5px 2px 5px;
   border-radius: 5px 5px 0 0;
+  border: 2px solid rgb(130, 87, 7);
+}
+
+button:hover {
+  background-color: rgb(130, 87, 7, 0.9);
 }
 
 #content {
@@ -83,4 +88,45 @@ button {
 
 .menu li {
   list-style-type: none;
+}
+
+form {
+  /* border: 1px red solid; */
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 20%;
+  padding-right: 20%;
+  align-items: center;
+  /* text-align: center; */
+}
+
+form > p {
+  width: 50%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 2;
+  padding: 3px;
+  border-radius: 3px;
+  padding-top: 2px;
+}
+
+label {
+  min-width: 100px;
+  text-align: left;
+}
+
+.contact {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  text-align: center;
+}
+
+.contact-height {
+  min-height: 600px;
 }
