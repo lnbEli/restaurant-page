@@ -3,6 +3,12 @@ import populateAboutPage from "./aboutPage.js";
 import populateMenuPage from "./menuPage.js";
 import populateContactPage from "./contactPage.js";
 
+const pageFunctions = {
+  About: populateAboutPage,
+  Menu: populateMenuPage,
+  Contact: populateContactPage,
+};
+
 const btns = document.querySelectorAll(".btn");
 
 populateAboutPage();
@@ -10,14 +16,9 @@ populateAboutPage();
 btns.forEach((element) => {
   element.addEventListener("click", () => {
     deleteContent();
-    if (element.textContent === "About") {
-      populateAboutPage();
-    } else if (element.textContent === "Menu") {
-      populateMenuPage();
-    } else {
-      populateContactPage();
-      console.log(element);
-    }
+    const buttonText = element.textContent;
+    const selectedFunction = pageFunctions[buttonText];
+    selectedFunction();
   });
 });
 
@@ -26,8 +27,10 @@ function deleteContent() {
   content.innerHTML = "";
 }
 
-// This does not This return the very similar error - Uncaught TypeError: functions[element.textContent] is not a function
-//     at HTMLButtonElement
-
-// console.log(`populate${element.textContent}Page`);
-// functions[`populate${element.textContent}Page`]();
+if (element.textContent === "About") {
+  populateAboutPage();
+} else if (element.textContent === "Menu") {
+  populateMenuPage();
+} else {
+  populateContactPage();
+}

@@ -26,6 +26,9 @@ module.exports = {
     ],
   },
   devtool: "inline-source-map",
+  node: {
+    global: true,
+  },
   devServer: {
     static: "./dist",
   },
