@@ -15,6 +15,7 @@ populateAboutPage();
 
 btns.forEach((element) => {
   element.addEventListener("click", () => {
+    populateContactPage();
     deleteContent();
     const buttonText = element.textContent;
     const selectedFunction = pageFunctions[buttonText];
@@ -25,12 +26,4 @@ btns.forEach((element) => {
 function deleteContent() {
   const content = document.querySelector("#content");
   content.innerHTML = "";
-}
-
-if (element.textContent === "About") {
-  populateAboutPage();
-} else if (element.textContent === "Menu") {
-  populateMenuPage();
-} else {
-  populateContactPage();
 }
